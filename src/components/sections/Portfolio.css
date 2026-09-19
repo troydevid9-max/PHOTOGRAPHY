@@ -105,11 +105,9 @@
 }
 
 .portfolio__card--dark .portfolio__card-image img {
-  filter: grayscale(100%) brightness(0.8);
 }
 
 .portfolio__card--dark:hover .portfolio__card-image img {
-  filter: grayscale(60%) brightness(0.9);
 }
 
 .portfolio__card--dark .portfolio__card-info {
@@ -118,7 +116,7 @@
   left: 0;
   right: 0;
   padding: var(--space-xl);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: transparent;
 }
 
 .portfolio__card--dark .portfolio__card-title {
@@ -150,11 +148,9 @@
 }
 
 .portfolio__card--light .portfolio__card-image img {
-  filter: grayscale(100%);
 }
 
 .portfolio__card--light:hover .portfolio__card-image img {
-  filter: grayscale(40%);
 }
 
 .portfolio__card--light .portfolio__card-info {
