@@ -1,0 +1,208 @@
+/* ============================================
+   Portfolio Section — Creative Card Layout
+   ============================================ */
+
+.portfolio {
+  background: var(--color-grey-100);
+  position: relative;
+}
+
+/* Heading */
+.portfolio__heading {
+  font-size: var(--text-7xl);
+  color: var(--color-black);
+  margin-bottom: var(--space-2xl);
+  line-height: 1;
+}
+
+/* Quotes Row */
+.portfolio__quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-grey-200);
+}
+
+.portfolio__quote-text {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-grey-600);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.portfolio__quote-text em {
+  font-family: var(--font-accent);
+  color: var(--color-black);
+  text-decoration: underline;
+  text-decoration-color: var(--color-warm);
+  text-underline-offset: 3px;
+}
+
+/* Subheading */
+.portfolio__subheading {
+  font-size: var(--text-2xl);
+  color: var(--color-black);
+  margin-bottom: var(--space-3xl);
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+
+.portfolio__subheading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background: var(--color-warm);
+}
+
+/* Creative Card Grid */
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-4xl);
+}
+
+/* Card Base */
+.portfolio__card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.portfolio__card:hover {
+  transform: translateY(-6px);
+}
+
+/* Card Image */
+.portfolio__card-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.portfolio__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow), filter var(--transition-slow);
+}
+
+.portfolio__card:hover .portfolio__card-image img {
+  transform: scale(1.05);
+}
+
+/* Dark Card */
+.portfolio__card--dark {
+  background: var(--color-black);
+}
+
+.portfolio__card--dark .portfolio__card-image img {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.portfolio__card--dark:hover .portfolio__card-image img {
+  filter: grayscale(60%) brightness(0.9);
+}
+
+.portfolio__card--dark .portfolio__card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-xl);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.portfolio__card--dark .portfolio__card-title {
+  color: var(--color-white);
+  font-family: var(--font-accent);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio__card--dark .portfolio__card-date {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+}
+
+/* Light Card */
+.portfolio__card--light {
+  background: var(--color-white);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio__card--light .portfolio__card-image {
+  flex: 1;
+  margin-bottom: var(--space-md);
+}
+
+.portfolio__card--light .portfolio__card-image img {
+  filter: grayscale(100%);
+}
+
+.portfolio__card--light:hover .portfolio__card-image img {
+  filter: grayscale(40%);
+}
+
+.portfolio__card--light .portfolio__card-info {
+  text-align: center;
+  padding: var(--space-md) 0;
+}
+
+.portfolio__card--light .portfolio__card-title {
+  color: var(--color-black);
+  font-family: var(--font-accent);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio__card--light .portfolio__card-date {
+  color: var(--color-grey-400);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+}
+
+/* CTA */
+.portfolio__cta {
+  text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio__quotes {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .portfolio__heading {
+    font-size: var(--text-5xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

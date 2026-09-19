@@ -1,0 +1,130 @@
+/* ---- Gallery Card ---- */
+
+.gallery-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-grey-200);
+}
+
+.gallery-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  filter: grayscale(30%);
+}
+
+.gallery-card:hover .gallery-card__image {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+
+.gallery-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--space-lg);
+}
+
+.gallery-card:hover .gallery-card__overlay {
+  opacity: 1;
+}
+
+.gallery-card__category {
+  color: var(--color-white);
+  font-size: 0.65rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-card__info {
+  padding: var(--space-md) var(--space-xs);
+}
+
+.gallery-card__title {
+  font-family: var(--font-accent);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-black);
+  margin-bottom: 0.2rem;
+}
+
+.gallery-card__date {
+  font-size: var(--text-xs);
+  color: var(--color-grey-400);
+  letter-spacing: 0.05em;
+}
+
+/* ---- Portfolio Variant (matching layout cards) ---- */
+.gallery-card--portfolio {
+  background: var(--color-white);
+  border: none;
+}
+
+.gallery-card--portfolio .gallery-card__image-wrapper {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-card--portfolio .gallery-card__image {
+  filter: grayscale(100%);
+}
+
+.gallery-card--portfolio:hover .gallery-card__image {
+  filter: grayscale(40%);
+}
+
+.gallery-card--portfolio .gallery-card__info {
+  padding: var(--space-lg) var(--space-sm);
+}
+
+.gallery-card--portfolio .gallery-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+}
+
+/* ---- Masonry Variant ---- */
+.gallery-card--masonry .gallery-card__image-wrapper {
+  border-radius: 0;
+}
+
+.gallery-card--masonry:nth-child(3n + 1) .gallery-card__image-wrapper {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-card--masonry:nth-child(3n + 2) .gallery-card__image-wrapper {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-card--masonry:nth-child(3n + 3) .gallery-card__image-wrapper {
+  aspect-ratio: 1;
+}
+
+/* Focus */
+.gallery-card:focus-visible {
+  outline: 2px solid var(--color-warm);
+  outline-offset: 4px;
+}

@@ -1,0 +1,108 @@
+/* ---- Button Component ---- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn__icon {
+  display: inline-flex;
+  transition: transform var(--transition-base);
+  font-size: 1.1em;
+}
+
+/* Primary - Outlined pill */
+.btn--primary {
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--color-black);
+  border-radius: 50px;
+  color: var(--color-black);
+  background: transparent;
+}
+
+.btn--primary:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--primary:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+/* Secondary - Outlined pill white */
+.btn--secondary {
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--color-white);
+  border-radius: 50px;
+  color: var(--color-white);
+  background: transparent;
+}
+
+.btn--secondary:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn--secondary:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+/* Ghost - No border, just text + arrow */
+.btn--ghost {
+  padding: 0.5rem 0;
+  color: var(--color-black);
+  border-bottom: 1px solid transparent;
+}
+
+.btn--ghost:hover {
+  border-bottom-color: var(--color-black);
+}
+
+.btn--ghost:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+/* Warm - Filled warm accent */
+.btn--warm {
+  padding: 1rem 2.5rem;
+  background: var(--color-warm);
+  color: var(--color-white);
+  border-radius: 50px;
+  border: 1px solid var(--color-warm);
+}
+
+.btn--warm:hover {
+  background: var(--color-warm-dark);
+  border-color: var(--color-warm-dark);
+}
+
+.btn--warm:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+/* Sizes */
+.btn--sm {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.65rem;
+}
+
+.btn--lg {
+  padding: 1.1rem 2.8rem;
+  font-size: var(--text-sm);
+}
+
+/* Focus */
+.btn:focus-visible {
+  outline: 2px solid var(--color-warm);
+  outline-offset: 2px;
+}
